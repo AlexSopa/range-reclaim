@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#081522">
+  <meta name="description" content="A free synthetic price-action trainer. Practice recognizing higher-high and lower-low failures as price reclaims a previous swing.">
+  <title>Range Reclaim · TheStrat Trainer</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23081522'/%3E%3Cpath d='M6 22 13 9 20 9 17 22 26 15' fill='none' stroke='%235de2ed' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <header class="masthead"><a class="brand" href="./" aria-label="Range Reclaim home"><span class="brandmark">R<span>↶</span></span><span>THESTRAT <b> / </b> TRAINING LAB</span></a><span class="badge">100% synthetic prices</span></header>
+  <section class="title-row"><div><p class="eyebrow">PRICE ACTION PRACTICE</p><h1>Range Reclaim<span>.</span></h1><p class="intro">Watch the break. Wait for the reclaim.</p></div><div class="session"><span>COMPLETED DRILLS</span><strong id="completed">00</strong></div></section>
+  <section class="workspace" aria-label="Interactive reversal trainer">
+    <div class="chart-panel">
+      <div class="chart-toolbar"><div class="symbol"><strong>SIM / USD</strong><span id="direction">Higher-high setup</span></div><div class="price"><strong id="price">—</strong><span id="status">Ready to replay</span></div></div>
+      <div class="chart-wrap"><canvas id="chart" role="img" aria-label="Synthetic candlestick chart showing the current price and recent swing levels"></canvas><div class="chart-watermark" aria-hidden="true">RANGE<br>RECLAIM</div></div>
+      <div class="legend"><span><i class="cyan"></i>Breakout reference</span><span><i class="slate"></i>Latest confirmed swing</span><span id="bar-count">BAR 39 / 65</span></div>
+      <div class="controls"><button id="play" class="primary">▶ Start replay</button><button id="step" class="secondary" title="Advance one candle">Step →</button><label class="speed">Speed<select id="speed"><option value="700">1×</option><option value="350" selected>2×</option><option value="150">4×</option></select></label><button id="next" class="secondary next">New drill ↗</button></div>
+    </div>
+    <aside class="coach-panel">
+      <div class="coach-top"><span class="eyebrow">READ THE REACTION</span><span id="drill-number">01</span></div>
+      <div class="phase-track" aria-label="Drill progress"><span id="phase-0" class="active">Approach</span><span id="phase-1">Break</span><span id="phase-2">Resolve</span></div>
+      <div id="coach" class="coach" aria-live="polite"><span class="stage-label" id="stage-label">THE SETUP</span><h2 id="message">A swing is in sight.</h2><p id="explanation">Price is approaching a previous swing high. Watch what happens once it trades above that level.</p></div>
+      <div id="choices" class="choices" hidden><p>What would you do here?</p><button class="primary" id="wait-choice">Wait for the reclaim</button><button class="secondary" id="chase-choice">Take the breakout</button></div>
+      <button id="continue" class="primary full" hidden>Continue replay →</button>
+      <div class="metrics"><div><span id="ref-label">Previous swing high</span><strong id="reference">—</strong></div><div><span>Beyond the level</span><strong id="excursion">$0.00</strong></div><div><span>Back inside the range</span><strong id="rejection">$0.00</strong></div><div><span>Rejection / breakout</span><strong id="ratio">�</strong></div></div>
+      <div id="result" class="result" hidden></div>
+      <div class="lesson"><span class="lesson-icon">↶</span><p>A higher high becomes a rejection when price crosses back below the previous swing high. Reverse the logic for a lower low.</p></div>
+    </aside>
+  </section>
+  <section class="bottom-row"><div><span class="eyebrow">BUILT TO TRAIN YOUR EYE</span><p><strong>Small break. 2� or greater rejection.</strong> At least 75% of completed drills reverse by twice the breakout distance or more.</p></div><div class="bias-note">Deliberately biased practice data.<br>These frequencies do not describe real markets.</div></section>
+  <footer><span>THESTRAT / RANGE RECLAIM</span><span>No account. No live feed. Just practice.</span></footer>
+</main>
+<script src="./engine.js"></script><script src="./app.js"></script>
+</body></html>
